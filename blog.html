@@ -1,0 +1,66 @@
+<!DOCTYPE html >
+<html lang="en"  data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+                                          <!-- google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+                                            <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+                                            <!-- Daisyui link -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'btn-color1': '#ABEF5F',
+                        'btn-color2': '#d9f99d',
+                        'bg-2':"#F4F4F4",
+                        'card-1':"#E7C1D3",
+                        'card-2':"#EFDA6E",
+                        'card-3':"#A4DAC3",
+                        'card-4':"#77AAEA",
+                    }
+                }
+            }
+        }
+      </script> 
+
+
+</head>
+<body>
+    <header class="bg-gray-100 shadow-md ">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+          <!-- Left: Blog Button -->
+          <div>
+            <a href="index.html" class="btn bg-btn-color1 border-0 btn-success">Home</a>
+          </div>
+    
+          <!-- Center: Donate Bangladesh with icon -->
+          <div class="flex items-center space-x-2">
+            <img src="assets/logo.png" alt="Donate Icon" class="w-8 h-8">
+            <span class="font-semibold text-xl">Donate Bangladesh</span>
+          </div>
+    
+          <!-- Right: Currency and Amount -->
+          <div class="flex items-center space-x-2">
+            <img src="assets/coin.png" alt="Currency Icon" class="w-8 h-8">
+            <span class="text-lg font-bold">5500 BDT</span>
+          </div>
+        </div>
+      </header>
+    
+</body>
+</html>
