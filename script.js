@@ -48,7 +48,7 @@ const qdonationBtn= document.getElementById('qbtn')
 
 let qInput=parseFloat( document.getElementById('qInput').value)
 
-
+// donationHandle('noakhali-donate-btn', 'noakhali-donate-amount', 'noakhali-amount', 'total-amount', 'history-section');
 ndonationBtn.addEventListener('click',function(){
     let nInput= parseFloat(document.getElementById('nInput').value)
     if (!isNaN(nInput) && nInput > 0 && nInput < totalAmount) {
@@ -61,6 +61,27 @@ ndonationBtn.addEventListener('click',function(){
         const ShowModal = document.getElementById('my_modal_1');
         ShowModal.showModal();
         
+
+        let title = document.getElementById(titleId).textContent;
+
+        let history = document.getElementById(history-section);
+        let newHistory = document.createElement('div');
+
+        newHistory.innerHTML = `
+            <div class="flex flex-col p-5 bg-white border border-border-color rounded-2xl">
+                <h3 class="text-lg font-bold">
+                    ${nInput.toFixed(2)} Taka is ${title}
+                </h3>
+                <p id="history-date" class="text-sm md:text-base text-paragraph-color">
+                </p>
+            </div>
+            `
+
+        history.insertBefore(newHistory, history.firstChild);
+
+        const date = new Date();
+        newHistory.querySelector("#history-date").innerText = "Date: " + date.toString();
+
      
     } else {
         alert("Try Agian")
@@ -110,3 +131,47 @@ qdonationBtn.addEventListener('click',function(){
 })
 
 
+function getCurrentDateTime() {
+    const now = new Date();
+    return now.toLocaleString('en-GB', { timeZone: 'Asia/Dhaka' });
+}
+
+
+document.getElementById('fbtn').addEventListener('click', donateFeni);
+
+function donateFeni() {
+    const amount = document.getElementById('fInput').value;
+    addToHistory('Flood Relief in Feni, Bangladesh', amount);
+}
+
+
+document.getElementById('nbtn').addEventListener('click', donateNoakhali);
+function donateNoakhali() {
+    const amount = document.getElementById('nInput').value;
+    addToHistory('Flood at Noakhali, Bangladesh', amount);
+}
+
+
+document.getElementById('qbtn').addEventListener('click', donateQuota);
+function donateQuota() {
+    const amount = document.getElementById('qInput').value;
+    addToHistory('Aid for Injured in the Quota Movement', amount);
+}
+
+
+
+
+// Function to add donation to history
+function addToHistory(title, amount) {
+    const historySection = document.getElementById('history-section');
+    const donationDate = getCurrentDateTime();
+
+    const historyItem = `
+        <div class="card bg-base-100 border border-xl pb-10 w-10/12 mx-auto  px-10 py-10">
+            <h2 class="font-bold">${amount} Taka is Donated for ${title}</h2>
+            <p>Date: ${donationDate}</p>
+        </div>
+    `;
+
+    historySection.innerHTML = historyItem + historySection.innerHTML;
+}
