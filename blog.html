@@ -45,7 +45,7 @@
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
           <!-- Left: Blog Button -->
           <div>
-            <a href="index.html" class="btn bg-btn-color1 border-0 btn-success">Home</a>
+            <a id="homeBtn" class="btn bg-btn-color1 border-0 btn-success">Home</a>
           </div>
     
           <!-- Center: Donate Bangladesh with icon -->
@@ -57,10 +57,72 @@
           <!-- Right: Currency and Amount -->
           <div class="flex items-center space-x-2">
             <img src="assets/coin.png" alt="Currency Icon" class="w-8 h-8">
-            <span class="text-lg font-bold">5500 BDT</span>
-          </div>
+            <h1 class=""><span class="text-lg font-bold" id="toatalAmount">5500</span> BDT</h1>
+        </div>
         </div>
       </header>
+          
+
+      <main>
+
+        <div class="w-11/12 mx-auto">
+          <div class="w-11/12 mx-auto  bg-base-200 mt-10 mb-2 collapse collapse-arrow">
+              <input type="radio" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title text-xl font-xl">
+                 <h1> What is the Document Object Model (DOM)?</h1>
+              </div>
+              <div class="collapse-content">
+                  <p>
+                    The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the structure of the document as a tree of objects, allowing you to manipulate its content and visual presentation. Each object represents a part of the document, such as an element or attribute.                  </p>
+              </div>
+          </div>
+          <div class="w-11/12 mx mx-auto collapse collapse-arrow bg-base-200 mb-2">
+              <input type="radio" name="my-accordion-2" />
+              <div class="collapse-title text-xl font-xl">
+                  <h1>How do you select an element from the DOM?</h1>
+              </div>
+              <div class="collapse-content">
+                  <p>
+                    To select an element from the DOM, you can use methods like `document.getElementById()` for selecting by ID, `document.querySelector()` for selecting by CSS selectors (classes, tags, etc.), or `document.getElementsByClassName()` for selecting by class name. These methods allow dynamic manipulation of the selected elements.
+                  </p>
+              </div>
+          </div>
+          <div class="w-11/12 mx-auto mb-2 collapse collapse-arrow bg-base-200">
+              <input type="radio" name="my-accordion-2" />
+              <div class="collapse-title text-xl font-xl">
+                <h1>What is event delegation in the context of the DOM, and why is it useful?
+                </h1>
+              </div>
+              <div class="collapse-content">
+                  <p>
+                    Event delegation is a technique in the DOM where a single event listener is attached to a parent element to manage events on its child elements. Instead of adding multiple listeners, the parent handles events as they bubble up. This improves efficiency and simplifies dynamic element handling.
+                  </p>
+              </div>
+          </div>
+          <div class="w-11/12 mx-auto mb-2 collapse collapse-arrow bg-base-200">
+              <input type="radio" name="my-accordion-2" />
+              <div class="collapse-title text-xl font-xl">
+                <h1 class="text-xl">How do you manipulate an element's attributes and styles using the DOM?</h1>              </div>
+              <div class="collapse-content">
+                  <p>
+                    To manipulate an element's attributes in the DOM, use methods like `setAttribute()` or `element.attribute = value`. For styles, use `element.style.property = value`. For example, to change an image's `src`, use `img.setAttribute('src', 'image.jpg')`, and for styles: `element.style.color = 'red';`.
+                  </p>
+              </div>
+          </div>
+
+      </div>
+      </main>
+
+
+
+
+
+      <script>
+        document.getElementById('homeBtn')
+            .addEventListener('click', function () {
+                window.location.href = "index.html";
+            });
+    </script>
     
 </body>
 </html>
