@@ -163,6 +163,9 @@ function donateQuota() {
 
 // Function to add donation to history
 function addToHistory(title, amount) {
+
+    if (!isNaN(amount) && amount > 0 && amount < totalAmount) {
+
     const historySection = document.getElementById('history-section');
     const donationDate = getCurrentDateTime();
 
@@ -174,4 +177,6 @@ function addToHistory(title, amount) {
     `;
 
     historySection.innerHTML = historyItem + historySection.innerHTML;
+    }
+    
 }
